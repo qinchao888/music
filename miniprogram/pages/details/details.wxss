@@ -4,21 +4,21 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 200rpx;
+  bottom: 198rpx;
 }
 scroll-view {
   height:100%;
 }
 .details>.songs .songs_list>.song {
   display: flex;
-  height: 136rpx;
+  height: 120rpx;
   align-items: center;
 }
 .details>.songs .songs_list>.song>.order {
   font-size: 34rpx;
   text-align: center;
-  width: 136rpx;
-  color: #666;
+  width: 120rpx;
+  color: #999;
 }
 .details>.songs .songs_list>.song>.desc {
   flex: 1;
@@ -29,7 +29,7 @@ scroll-view {
 }
 /*.details>.songs .songs_list>.song:not(:last-child)>.desc::before {*/
 .details>.songs .songs_list>.song>.desc::before {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
 .details>.songs .songs_list>.song>.desc>.name {
   width: 100%;
@@ -38,7 +38,15 @@ scroll-view {
 }
 .details>.songs .songs_list>.song>.desc>.singer {
   width: 100%;
-  font-size: 28rpx;
-  color: #666;
+  font-size: 24rpx;
+  color: #999;
   margin-top: 12rpx;
+}
+.mask_layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .1);
 }
