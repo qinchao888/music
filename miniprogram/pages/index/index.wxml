@@ -5,13 +5,12 @@
       <view class="switch"><image bindtap="showTheme" src="../../images/list.svg"/></view>
     </view>
     <view class="switch_theme" animation="{{animationData}}" bindtap="switchTheme">
-      <view class="theme_color" wx:for="{{themeColorList}}" wx:key="{{index}}">
-        <view style="color:{{item.color}}">{{item.name}}</view>
-        <view style="background-color:{{item.color}}" data-value="{{item.color}}"></view>
+      <view class="theme_color" data-value="{{item.color}}" style="color:{{item.color}}" wx:for="{{themeColorList}}" wx:key="{{index}}">
+        {{item.name}}
       </view>
     </view>
     <scroll-view scroll-y>
-      <navigator url="../details/details" open-type="navigateTo" class="music_list_details" wx:for="{{musicList}}" wx:key="{{index}}">
+      <navigator hover-class="none" url="../details/details?collection={{item.collection}}" open-type="navigateTo" class="music_list_details" wx:for="{{musicList}}" wx:key="{{index}}">
         <view class="left"><image src="{{item.url}}"/></view>
         <view class="right border">
           <view class="music_list_title">{{item.title}}</view>
@@ -20,5 +19,4 @@
       </navigator>
     </scroll-view>
   </view>
-  <!-- <footer theme-color="{{themeColor}}"></footer> -->
 </view>

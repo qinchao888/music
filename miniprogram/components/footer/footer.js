@@ -30,9 +30,11 @@ Component({
       this.init()
     }, 1000)
   },
+  detached () {
+    this.destroy(innerAudioContext)
+  },
   methods: {
     init (e) {
-      console.log(this.data.songsList)
       this.setData({
         sliderValue: 0,
         curTime: '00:00',
@@ -68,13 +70,12 @@ Component({
       })
       innerAudioContext.onEnded(() => { // 监听播放结束
         clearInterval(timer)
-        this.setData({
-          icon: '../../images/pause.svg'
-        })
+        if (this.data.isSingleLoop) {
+          this.init('play')
+        } else {
+          this.playNext()  
+        }
       })
-      // innerAudioContext.onSeeking(() => {
-      //   console.log('seeking')
-      // })
     },
     changeProgress: function () { // 左侧变化的时间
       timer = setInterval(() => {

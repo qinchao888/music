@@ -7,9 +7,15 @@ Page({
     name: '',
     singer: '',
     url: '',
-    order: ''
+    order: '',
+    showLayer: true
   },
-  onLoad () {
+  onLoad (e) {
+    setTimeout(() => {
+      this.setData({
+        showLayer: false
+      })
+    }, 1000)
     wx.cloud.callFunction({
       name: 'getData',
       data: {
@@ -24,7 +30,7 @@ Page({
     wx.cloud.callFunction({
       name: 'getData',
       data: {
-        collection: 'my_favor'
+        collection: e.collection
       },
       success: (res) => {
         // 从缓存中读取上次播放的歌曲，初始化songsData,同步操作

@@ -4,7 +4,6 @@ Page({
     musicList: [],
     themeColorList: [],
     isShowTheme: false,
-    // themeColor: '',
     animationData: {},
     rate: 2
   },
@@ -61,6 +60,11 @@ Page({
     var distance = 240 / this.data.rate
     if (!this.data.isShowTheme) { // 显示
       animation.translate(-distance).step()
+      setTimeout(() => {
+        if (this.data.isShowTheme) { // 3秒后自动隐藏当前显示的主题色选择框
+          this.showTheme()  
+        }
+      }, 3000)
     } else { // 隐藏
       animation.translate(distance).step() 
     }
@@ -71,11 +75,6 @@ Page({
   },
   switchTheme: function (e) {
     var themeColor = e.target.dataset.value
-    if (themeColor) {
-      this.setData({
-        themeColor: themeColor
-      })
-    }
     // 移出动画
     var animation = wx.createAnimation({
       duration: 200
@@ -90,6 +89,20 @@ Page({
       data: {
         collection: 'current_theme',
         themeColor: themeColor
+      },
+      success: () => {
+        wx.showToast({
+          title: '主题色设置成功',
+          icon: 'none',
+          duration: 1000
+        })
+      },
+      fail: () => {
+        wx.showToast({
+          title: '主题色设置失败',
+          icon: 'none',
+          duration: 1000
+        })
       }
     })
   }

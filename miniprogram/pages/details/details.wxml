@@ -13,4 +13,6 @@
     </scroll-view>
   </view>
   <footer id="footer" order="{{order}}" songsList="{{songsList}}" theme-color="{{themeColor}}" name="{{name}}" allTime="{{allTime}}" totalTime="{{totalTime}}" singer="{{singer}}" url="{{url}}"></footer>
+  <!-- 遮罩层，数据加载完成才允许点击 -->
+  <view wx:if="{{showLayer}}" class="mask_layer"></view>
 </view>

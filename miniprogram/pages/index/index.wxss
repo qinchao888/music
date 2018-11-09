@@ -1,32 +1,26 @@
 @import '../../style/common.wxss';
-.music {
-
-}
-.music_list {
-
-}
 .switch_theme {
   position: fixed;
   top: 80rpx;
   right: -240rpx;
   font-size: 28rpx;
-  padding: 10rpx 20rpx;
+  /*padding: 10rpx 20rpx;*/
   box-sizing: border-box;
-  min-height: 200rpx;
+  min-height: 210rpx;
   width: 240rpx;
   z-index: 1;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .1);
 }
-.switch_theme .theme_color,.switch_theme .blue, .switch_theme .green {
+.switch_theme .theme_color {
   display: flex;
-  justify-content: space-between;
-  height: 60rpx;
+  justify-content: center;
+  height: 70rpx;
   align-items: center;
 }
-.switch_theme .theme_color view:nth-of-type(2) {
+/*.switch_theme .theme_color view:nth-of-type(2) {
   height: 48rpx;
   width: 120rpx;
-}
+}*/
 scroll-view{
   position: fixed;
   top: 80rpx;
@@ -73,8 +67,8 @@ scroll-view{
   align-content: center;
 }
 /*.music_list .music_list_details:not(:last-child)>.border::before{*/
-  .music_list .music_list_details>.border::before{
-  border-bottom: 1px solid #ccc;
+  .music_list .music_list_details>.border::before {
+  border-bottom: 1px solid #ddd;
   /*border-bottom: 1px solid red;*/
 }
 .music_list .music_list_details>.right>.music_list_title {
