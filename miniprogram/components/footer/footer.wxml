@@ -1,0 +1,29 @@
+  <view class="music_player border">
+    <view class="music_control">
+      <view class="desc">
+        <view class="title text_ellipsis" data-value="{{name}}" bindtouchstart="touchStart" bindtouchend="touchEnd">{{name}}</view>
+        <view class="singer text_ellipsis" data-value="{{singer}}" bindtouchstart="touchStart" bindtouchend="touchEnd">{{singer}}</view>
+      </view>
+      <view class="control">
+        <view class="left" bindtap="playPrev" style="background-color:{{themeColor}}">
+          <image src="../../images/right.svg"/>
+        </view>
+        <view class="pause" style="background-color:{{themeColor}}" bindtap="changeIcon">
+          <image src="{{icon}}" class="{{icon ==='../../images/pause.svg'?'pause_icon_style':'' }}"/>
+        </view>
+        <view class="right" bindtap="playNext" style="background-color:{{themeColor}}">
+          <image src="../../images/right.svg"/>
+        </view>
+        <view class="loop" bindtap="changeLoopMode">
+          <image src="../../images/loop.svg"/>
+          <text wx:if="{{isSingleLoop}}">1</text>
+        </view>
+      </view>
+    </view>
+    <view class="pop_value" wx:if="{{popValue}}">{{popValue}}</view>
+    <view class="music_slider">
+      <view class="cur_time">{{curTime}}</view>
+      <slider step="0.1" value="{{sliderValue}}"activeColor="{{themeColor}}" block-color="{{themeColor}}" block-size="16" block-style="block_style" backgroundColor="rgba(0,0,0,0.2)" bindchange="changeTime" bindchanging="changing"></slider>
+      <view class="total_time">{{totalTime}}</view>
+    </view>
+  </view>

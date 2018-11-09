@@ -1,0 +1,16 @@
+<view class="details">
+  <view class="songs">
+    <scroll-view scroll-y>
+      <view class="songs_list">
+        <view class="song" bindtap="changeSong" data-info="{{item}}" wx:for="{{songsList}}" wx:key="{{index}}">
+          <view class="order">{{item.order}}</view>
+          <view class="desc border">
+            <view class="name">{{item.name}}</view>
+            <view class="singer">{{item.singer}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <footer id="footer" order="{{order}}" songsList="{{songsList}}" theme-color="{{themeColor}}" name="{{name}}" allTime="{{allTime}}" totalTime="{{totalTime}}" singer="{{singer}}" url="{{url}}"></footer>
+</view>

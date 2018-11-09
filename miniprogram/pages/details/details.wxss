@@ -1,0 +1,44 @@
+@import "../../style/common.wxss";
+.songs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 200rpx;
+}
+scroll-view {
+  height:100%;
+}
+.details>.songs .songs_list>.song {
+  display: flex;
+  height: 136rpx;
+  align-items: center;
+}
+.details>.songs .songs_list>.song>.order {
+  font-size: 34rpx;
+  text-align: center;
+  width: 136rpx;
+  color: #666;
+}
+.details>.songs .songs_list>.song>.desc {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+/*.details>.songs .songs_list>.song:not(:last-child)>.desc::before {*/
+.details>.songs .songs_list>.song>.desc::before {
+  border-bottom: 1px solid #ccc;
+}
+.details>.songs .songs_list>.song>.desc>.name {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+}
+.details>.songs .songs_list>.song>.desc>.singer {
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 12rpx;
+}
